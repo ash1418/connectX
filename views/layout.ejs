@@ -1,0 +1,18 @@
+<html>
+    <head>
+      <title>
+        <%= title %>
+      </title>
+    <link rel="stylesheet" href="/css/layout.css">
+    <%- style %> <!--whenever there is style tag in the body it will be put here automatically-->
+    </head>
+    <body>
+      <%- include('_header'); %>
+      
+       <%- body %>
+      
+      <%- include('_footer'); %>
+
+      <%- script %>  <!--whenever there is script tag in the body it will be put here automatically-->
+    </body>
+</html>
