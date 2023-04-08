@@ -29,15 +29,38 @@ passport.serializeUser(function(user,done){
 
 
 //deserializing the user from the key in the cookies
-passport.deserializeUser(async function(id, done) {
+passport.deserializeUser(async function(id, done) 
+{
     try {
       const user = await User.findById(id);
       return done(null, user);
-    } catch (err) {
+    } 
+    catch (err) 
+    {
       console.log('Error in finding user --> Passport');
       return done(err);
     }
-  });
-  
+  }
+);
+
+  //sending data to views
+  //check if user is authenticated
+ passport.checkAuthentication = function(req,res,next){
+  if(req.isAuthenticated())//built in function in passport to check if req is authenticated or not
+   {
+    return next();  //if the user is signed in pass on the request to the next function(controller's action)
+   }
+   //if the user is not signed in
+   return res.redirect('/users/sign-in');
+
+ }
+
+ passport.setAuthenticatedUser= function(req, res, next){
+  if(req.isAuthenticated()){
+    //req.user contains  the current signed in user fro the session cookie and we are just sending this to locals for the views   
+    res.locals.user=req.user
+  }
+   next();
+ }
 
 module.exports = passport;

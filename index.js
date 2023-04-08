@@ -29,8 +29,8 @@ app.set('layout extractScripts', true);
     name: 'codial',
     // TODO change the secret before deoloyement in production mode
     secret: 'blahsomething',
-    saveUninitialized: false,
-    resave:false,
+    saveUninitialized: false, //session that is not initialized (user has not logged in ) dont store in cookie
+    resave:false,  //when the identity is established dont rewrite until any changes  
     cookie:{
        maxAge:(1000 * 60 * 100)  //in terms of milliseconds
     }   //age after cookie expires
@@ -38,6 +38,8 @@ app.set('layout extractScripts', true);
 
  app.use(passport.initialize());
  app.use(passport.session());
+
+ app.use(passport.setAuthenticatedUser);
 
  //use express router
  app.use('/', require('./routes/index'));
