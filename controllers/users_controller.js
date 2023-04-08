@@ -8,15 +8,27 @@ module.exports.profile=function(req,res){
 }
 
 module.exports.signUp=function(req,res){
-    res.render('user_sign_up',{
+    if(req.isAuthenticated())
+    {
+      return res.redirect('/users/profile');
+    }
+    
+    return res.render('user_sign_up',{
         title: "Codial | Sign up"
     })
+  
+
 }
 
 module.exports.signIn= function(req,res){
-    res.render('user_sign_in',{
+  if(req.isAuthenticated())
+  {
+    return res.redirect('/users/profile');
+  }
+   return res.render('user_sign_in',{
         title: "Codial | Sign in"
     })
+  
 }
 
 //get the sign up data
