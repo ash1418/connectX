@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb://localhost/codial_development",{
+mongoose.connect("mongodb://0.0.0.0:27017/codial_development",{
     useNewUrlParser: true,
     useUnifiedTopology: true,
     family:4
@@ -17,4 +17,4 @@ db.once('open', function()
 
 });
 
-module.exports =db;
+module.exports = db;
