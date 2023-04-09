@@ -47,22 +47,7 @@ app.set('layout extractScripts', true);
       }
     )
  }));
-// app.use(session({
-//    name: 'codial',
-//    secret: 'blahsomething',
-//    saveUninitialized: false,
-//    resave: false,
-//    cookie: {
-//      maxAge: (1000 * 60 * 100)
-//    },
-//    store: MongoStore.create({
-//      mongoUrl: 'mongodb://localhost:27017/myapp', // replace with your database URL
-//      collectionName: 'sessions',
-//      autoRemove: 'disabled'
-//    }, (err) => {
-//      console.log(err || 'Session store created');
-//    })
-//  }));
+
 
  app.use(passport.initialize());
  app.use(passport.session());

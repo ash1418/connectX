@@ -79,6 +79,16 @@ module.exports.create = async function(req, res) {
 
 //sign in and create a session for the user
 module.exports.createSession=function(req,res){
-    return res.redirect('/');
    
+   return res.redirect('/');
+   
+}
+
+module.exports.destroySession = function(req,res,next){
+  req.logout((err)=>{
+  if(err) return next(err);
+  return res.redirect('/');
+  }
+  );  //inbuilt method in passport 
+  
 }
