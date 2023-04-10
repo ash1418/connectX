@@ -1,0 +1,23 @@
+header {
+  background-color: #2c3e50;
+  position: fixed;
+  color: white;
+  height: 3.5vw;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  header a {
+    color: white;
+    text-decoration: none; }
+  header #left {
+    margin-left: 0.7vw;
+    font-weight: bold;
+    font-size: 2.0vw; }
+  header #right a {
+    margin-right: 1.5vw;
+    font-size: 1.6vw; }
+  header #right a:last-child {
+    margin-right: 0.5vw; }
+  header #right a:hover {
+    color: #f39c12; }

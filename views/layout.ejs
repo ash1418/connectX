@@ -4,12 +4,17 @@
         <%= title %>
       </title>
     <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
     <%- style %> <!--whenever there is style tag in the body it will be put here automatically-->
     </head>
     <body>
       <%- include('_header'); %>
-      
-       <%- body %>
+      <main>
+      <div style="margin-top: 3vw"> 
+       <%- body %>  
+      </main>
+      </div>
       
       <%- include('_footer'); %>
 

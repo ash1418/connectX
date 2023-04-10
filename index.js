@@ -9,7 +9,15 @@ const session= require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 const MongoStore = require('connect-mongo')(session);  //to store the session in mongodb so that user cant be loggedout when we restart the server
+const sassMiddleware = require('node-sass-middleware');  //for sass
 
+app.use(sassMiddleware({
+   src: './assets/scss',
+   dest: './assets/css',
+   debug: true, //show if there was any errors
+   outputStyle: 'extended',   //do i want every thing in single line or multiple line multiple =extended single=compress
+   prefix:  '/css'     //where should server lookout for css files 
+}))
 app.use(express.urlencoded());
 
 app.use(cookieParser());

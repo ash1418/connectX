@@ -1,0 +1,86 @@
+$body-font: 'Montserrat', sans-serif;
+$primary-color: #0d3c59;
+$secondary-color: #00587a;
+
+body {
+  font-family: $body-font;
+  background-color: #0D3C59;
+}
+
+.container {
+  width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+
+  h1 {
+    font-size: 2rem;
+    color: $primary-color;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      font-size: 1.1rem;
+      color: $primary-color;
+      margin-bottom: 10px;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: none;
+      background-color: #f1f1f1;
+      color: $primary-color;
+      font-size: 1.1rem;
+    }
+
+    input[type="submit"] {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      background-color: $primary-color;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: $secondary-color;
+      }
+    }
+  }
+
+  .signup-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+
+    p {
+      font-size: 1.1rem;
+      color: $primary-color;
+    }
+
+    a {
+      font-size: 1.1rem;
+      color: $secondary-color;
+      text-decoration: none;
+      margin-top: 5px;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+}
